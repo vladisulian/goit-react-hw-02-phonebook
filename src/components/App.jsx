@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid';
 export const App = () => {
   return <Contacts />;
 };
-console.log(nanoid());
+console.log();
 
 class Contacts extends Component {
   state = {
@@ -17,6 +17,8 @@ class Contacts extends Component {
     return (
       <div className="Phonebook-container">
         <h1 className="Phonebook__title">Phonebook</h1>
+        <p>Nanoid libr generates unique id's</p>
+        <p>It's: {nanoid()}</p>
         <div className="Phonebook__form-container">
           <input
             type="text"
