@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { Phonebook } from './Phonebook/Phonebook';
-import '/Phonebook/Phonebook.css';
+import './Phonebook/Phonebook.css';
 import { nanoid } from 'nanoid';
 export const App = () => {
   return <Contacts />;
