@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Phonebook } from './Phonebook/Phonebook';
+// import { Phonebook } from './Phonebook/Phonebook';
 import './Phonebook/Phonebook.css';
 import { nanoid } from 'nanoid';
 export const App = () => {
@@ -11,6 +11,10 @@ class Contacts extends Component {
   state = {
     contacts: [],
     name: '',
+  };
+
+  addContact = () => {
+    this.state.contacts.push();
   };
 
   render() {
