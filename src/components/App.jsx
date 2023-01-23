@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ContactsList } from './Contacts/ContactsList';
 import { Form } from './Form/Form';
 
 export class App extends Component {
@@ -7,11 +8,19 @@ export class App extends Component {
     name: '',
   };
 
+  formSubmitData = data => {
+    console.log(data);
+  };
+
   render() {
     return (
-      <>
-        <Form contacts={this.state.contacts} />
-      </>
+      <div className="Phonebook-container">
+        <h1 className="Phonebook__title">Phonebook</h1>
+
+        <Form contacts={this.state.contacts} onSubmit={this.formSubmitData} />
+
+        <ContactsList />
+      </div>
     );
   }
 }
