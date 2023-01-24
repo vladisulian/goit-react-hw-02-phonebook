@@ -8,7 +8,6 @@ import { FilterBar } from './Filter';
 export class Form extends Component {
   state = {
     name: '',
-    filter: '',
     number: '',
   };
 
@@ -50,8 +49,6 @@ export class Form extends Component {
             Add contact
           </button>
         </form>
-
-        <FilterBar handleChange={this.handleChange} />
       </>
     );
   }

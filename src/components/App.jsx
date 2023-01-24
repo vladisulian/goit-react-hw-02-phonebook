@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
 import { ContactsList } from './Contacts/ContactsList';
+import { FilterBar } from './Form/Filter';
 import { Form } from './Form/Form';
 
 export class App extends Component {
@@ -11,21 +12,36 @@ export class App extends Component {
       { id: nanoid(), name: 'Eden Clements', number: '645-17-79' },
       { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
     ],
+    filter: '',
   };
 
-  formSubmitData = (data, e) => {
+  handleChange = e => {
+    this.setState({
+      [e.currentTarget.name]: e.currentTarget.value,
+    });
+  };
+
+  formSubmitData = e => {
     e.preventDefault();
-    console.log(data);
   };
 
   render() {
+    // const filteredContacts = this.state.contacts.filter(contact =>
+    //   contact.text.includes(this.state.filter)
+    // );
+
     return (
       <div className="Phonebook-container">
         <h1 className="Phonebook__title">Phonebook</h1>
 
         <Form onSubmit={this.formSubmitData} />
 
-        <ContactsList contacts={this.state.contacts} />
+        <FilterBar handleChange={this.handleChange} />
+
+        <ContactsList
+          contacts={this.state.contacts}
+          filterSearch={this.state.filter}
+        />
       </div>
     );
   }
