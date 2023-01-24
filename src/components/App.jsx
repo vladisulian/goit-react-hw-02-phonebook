@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
 import { ContactsList } from './Contacts/ContactsList';
+import { FilterBar } from './Form/Filter';
 import { Form } from './Form/Form';
 
 export class App extends Component {
@@ -16,6 +17,12 @@ export class App extends Component {
     number: '',
   };
 
+  handleChange = e => {
+    this.setState({
+      [e.currentTarget.name]: e.currentTarget.value,
+    });
+  };
+
   formSubmitData = (data, e) => {
     e.preventDefault();
     console.log(data);
@@ -26,8 +33,9 @@ export class App extends Component {
       <div className="Phonebook-container">
         <h1 className="Phonebook__title">Phonebook</h1>
 
-        <Form onSubmit={this.formSubmitData} />
+        <Form onSubmit={this.formSubmitData} handleChange={this.handleChange} />
 
+        <FilterBar handleChange={this.handleChange} />
         <ContactsList contacts={this.state.contacts} />
       </div>
     );

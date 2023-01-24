@@ -4,13 +4,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { nanoid } from 'nanoid';
 
-export const Form = () => {
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   this.state.contacts.push(e.target.name.value);
-  //   console.log(this.state.contacts);
-  // };
-
+export const Form = ({ handleChange }) => {
   return (
     <form autoComplete="off" className="Phonebook__form-container">
       <label htmlFor="name">
@@ -22,6 +16,7 @@ export const Form = () => {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
+          onChange={handleChange}
         />
       </label>
       <label htmlFor="number">
@@ -33,6 +28,7 @@ export const Form = () => {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
+          onChange={handleChange}
         />
       </label>
       <button type="submit" className="Phonebook__form-submit-button">
