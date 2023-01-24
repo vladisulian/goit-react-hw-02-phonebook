@@ -26,10 +26,6 @@ export class App extends Component {
   };
 
   render() {
-    // const filteredContacts = this.state.contacts.filter(contact =>
-    //   contact.text.includes(this.state.filter)
-    // );
-
     return (
       <div className="Phonebook-container">
         <h1 className="Phonebook__title">Phonebook</h1>

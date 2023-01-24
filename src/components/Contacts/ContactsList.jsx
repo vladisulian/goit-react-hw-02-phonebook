@@ -1,13 +1,18 @@
 import React from 'react';
 import './ContactsList.css';
 
-export const ContactsList = ({ contacts }) => {
+export const ContactsList = ({ contacts, filterSearch }) => {
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filterSearch)
+  );
+  // console.log(contacts.name.textContent);
+
   return (
     <div className="Contacts-list-container">
       <h1>Contacts</h1>
 
       <ul className="Contacts-list">
-        {contacts.map(({ name, id, number }) => {
+        {filteredContacts.map(({ name, id, number }) => {
           return (
             <li key={id}>
               {name}: {number}
