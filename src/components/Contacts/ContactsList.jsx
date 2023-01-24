@@ -5,7 +5,6 @@ export const ContactsList = ({ contacts, filterSearch }) => {
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filterSearch)
   );
-  // console.log(contacts.name.textContent);
 
   return (
     <div className="Contacts-list-container">
