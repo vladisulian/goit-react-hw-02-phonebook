@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './Form.css';
-import { Formik } from 'formik';
-import * as yup from 'yup';
-import { nanoid } from 'nanoid';
-import { FilterBar } from './Filter';
+
 
 export class Form extends Component {
   state = {
