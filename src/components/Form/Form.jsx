@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Form.css';
 
-
 export class Form extends Component {
   state = {
     name: '',
@@ -14,10 +13,26 @@ export class Form extends Component {
     });
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+
+    this.props.onSubmit(this.state);
+
+    this.reset();
+  };
+
+  reset = () => {
+    this.setState({ name: '', number: '' });
+  };
+
   render() {
     return (
       <>
-        <form autoComplete="off" className="Phonebook__form-container">
+        <form
+          autoComplete="off"
+          className="Phonebook__form-container"
+          onSubmit={this.handleSubmit}
+        >
           <label htmlFor="name">
             Name <br />
             <input

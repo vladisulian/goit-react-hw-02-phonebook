@@ -23,8 +23,8 @@ export class App extends Component {
     });
   };
 
-  formSubmitData = e => {
-    e.preventDefault();
+  formSubmitHandler = data => {
+    console.log(data);
   };
 
   render() {
@@ -36,7 +36,7 @@ export class App extends Component {
       <div className="Phonebook-container">
         <h1 className="Phonebook__title">Phonebook</h1>
 
-        <Form onSubmit={this.formSubmitData} />
+        <Form onSubmit={this.formSubmitHandler} />
 
         <FilterBar handleChange={this.handleChange} />
 
