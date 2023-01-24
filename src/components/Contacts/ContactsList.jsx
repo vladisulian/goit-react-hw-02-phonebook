@@ -1,4 +1,3 @@
-import React from 'react';
 import './ContactsList.css';
 
 export const ContactsList = ({ contacts, filterSearch }) => {
