@@ -1,5 +1,3 @@
-import Reactfrom from 'react';
-
 export const FilterBar = ({ handleChange }) => {
   return (
     <>

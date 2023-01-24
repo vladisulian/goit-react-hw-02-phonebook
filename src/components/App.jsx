@@ -26,6 +26,10 @@ export class App extends Component {
   };
 
   render() {
+    const filteredContacts = this.state.contacts.filter(contact =>
+      contact.name.toLowerCase().includes(this.state.filter)
+    );
+
     return (
       <div className="Phonebook-container">
         <h1 className="Phonebook__title">Phonebook</h1>
@@ -35,7 +39,7 @@ export class App extends Component {
         <FilterBar handleChange={this.handleChange} />
 
         <ContactsList
-          contacts={this.state.contacts}
+          contacts={filteredContacts}
           filterSearch={this.state.filter}
         />
       </div>
