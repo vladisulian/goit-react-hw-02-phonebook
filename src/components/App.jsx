@@ -25,6 +25,10 @@ export class App extends Component {
 
   formSubmitHandler = data => {
     console.log(data);
+    const dataContact = [
+      { id: nanoid(), name: data.name, number: data.number },
+    ];
+    console.log(dataContact);
   };
 
   render() {
