@@ -1,7 +1,6 @@
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
 import { ContactsList } from './Contacts/ContactsList';
-import { FilterBar } from './Form/Filter';
 import { Form } from './Form/Form';
 
 export class App extends Component {
@@ -12,13 +11,6 @@ export class App extends Component {
       { id: nanoid(), name: 'Eden Clements', number: '645-17-79' },
       { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
     ],
-    filter: '',
-  };
-
-  handleChange = e => {
-    this.setState({
-      [e.currentTarget.name]: e.currentTarget.value,
-    });
   };
 
   formSubmitData = (data, e) => {

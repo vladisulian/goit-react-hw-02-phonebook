@@ -8,6 +8,7 @@ import { FilterBar } from './Filter';
 export class Form extends Component {
   state = {
     name: '',
+    filter: '',
     number: '',
   };
 
