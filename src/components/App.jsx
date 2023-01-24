@@ -13,8 +13,6 @@ export class App extends Component {
       { id: nanoid(), name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
   handleChange = e => {
@@ -33,9 +31,8 @@ export class App extends Component {
       <div className="Phonebook-container">
         <h1 className="Phonebook__title">Phonebook</h1>
 
-        <Form onSubmit={this.formSubmitData} handleChange={this.handleChange} />
+        <Form onSubmit={this.formSubmitData} />
 
-        <FilterBar handleChange={this.handleChange} />
         <ContactsList contacts={this.state.contacts} />
       </div>
     );
