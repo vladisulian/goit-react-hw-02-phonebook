@@ -23,8 +23,7 @@ export class App extends Component {
     });
   };
 
-  formSubmitHandler = data => {
-    console.log(data);
+  formAddContact = data => {
     const dataContact = [
       { id: nanoid(), name: data.name, number: data.number },
     ];
@@ -33,7 +32,6 @@ export class App extends Component {
         contacts: prevState.contacts.concat(dataContact),
       };
     });
-    console.log(dataContact);
   };
 
   render() {
@@ -45,7 +43,7 @@ export class App extends Component {
       <div className="Phonebook-container">
         <h1 className="Phonebook__title">Phonebook</h1>
 
-        <Form onSubmit={this.formSubmitHandler} />
+        <Form onSubmit={this.formAddContact} />
 
         <FilterBar handleChange={this.handleChange} />
 
