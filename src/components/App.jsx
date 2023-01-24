@@ -28,6 +28,11 @@ export class App extends Component {
     const dataContact = [
       { id: nanoid(), name: data.name, number: data.number },
     ];
+    this.setState(prevState => {
+      return {
+        contacts: prevState.contacts.concat(dataContact),
+      };
+    });
     console.log(dataContact);
   };
 
