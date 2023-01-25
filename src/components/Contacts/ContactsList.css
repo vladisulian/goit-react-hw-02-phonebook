@@ -4,25 +4,52 @@
 }
 .Contacts-list {
   display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
   flex-wrap: wrap;
 
-  width: 1000px;
+  width: 690px;
   gap: 40px;
 }
 
+input {
+  width: 350px;
+  border-radius: 22px;
+  border: 1px solid black;
+  outline: none;
+}
+/* #e9b352; */
 li {
   display: flex;
   flex-direction: column;
   text-align: start;
+
+  cursor: pointer;
+
+  transition: transform 350ms ease;
+}
+
+li:hover {
+  transform: scale(1.1);
 }
 .Contacts__delete-button {
   height: 25px;
+  background-color: darkgray;
+  cursor: pointer;
+
+  transition: all 350ms ease;
+}
+
+.Contacts__delete-button:hover {
+  background-color: gray;
+
+  transform: scale(1.1);
 }
 
 .contacts-item {
   margin-right: 15px;
+}
+
+p {
+  margin-left: 10px;
 }
 
 .contacts__name {
@@ -38,6 +65,22 @@ li {
   margin-bottom: 0;
 }
 
+.contacts__name,
+.contacts__number {
+  transition: all 350ms ease;
+}
+
+.contacts__name:hover,
+.contacts__number:hover {
+  transform: scale(1.1);
+}
+.contacts__name:hover {
+  background-color: #e9b352;
+}
+.contacts__number:hover {
+  background-color: #c5c4c4;
+}
+
 .contacts__number {
   display: flex;
   align-content: center;
@@ -45,8 +88,4 @@ li {
   height: 25px;
   border: 1px solid black;
   background-color: darkgray;
-}
-
-p {
-  margin-left: 25px;
 }
