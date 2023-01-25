@@ -16,6 +16,7 @@ input {
   border: 1px solid black;
   outline: none;
 }
+
 /* #e9b352; */
 li {
   display: flex;
@@ -29,6 +30,8 @@ li {
 
 li:hover {
   transform: scale(1.1);
+  background: rgb(219, 205, 205);
+  border-color: rgb(31, 140, 177);
 }
 .Contacts__delete-button {
   height: 25px;
@@ -39,8 +42,8 @@ li:hover {
 }
 
 .Contacts__delete-button:hover {
-  background-color: gray;
-
+  background: rgb(219, 205, 205);
+  border-color: rgb(31, 140, 177);
   transform: scale(1.1);
 }
 
@@ -65,6 +68,15 @@ p {
   margin-bottom: 0;
 }
 
+.contacts__number {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 25px;
+  border: 1px solid black;
+  background-color: darkgray;
+}
+
 .contacts__name,
 .contacts__number {
   transition: all 350ms ease;
@@ -73,19 +85,6 @@ p {
 .contacts__name:hover,
 .contacts__number:hover {
   transform: scale(1.1);
-}
-.contacts__name:hover {
-  background-color: #e9b352;
-}
-.contacts__number:hover {
-  background-color: #c5c4c4;
-}
-
-.contacts__number {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  height: 25px;
-  border: 1px solid black;
-  background-color: darkgray;
+  background: rgb(219, 205, 205);
+  border-color: rgb(31, 140, 177);
 }
