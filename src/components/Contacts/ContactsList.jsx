@@ -9,7 +9,12 @@ export const ContactsList = ({ contacts }) => {
         {contacts.map(({ name, id, number }) => {
           return (
             <li key={id}>
-              {name}: {number}
+              <p className="contacts-item">
+                {name}: {number}
+              </p>
+              <button type="button" className="Contacts__delete-button">
+                Delete contact
+              </button>
             </li>
           );
         })}

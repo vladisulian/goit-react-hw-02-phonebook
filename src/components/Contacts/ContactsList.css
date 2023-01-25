@@ -2,5 +2,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-end;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+.Contacts__delete-button {
+  height: 25px;
+}
+
+.contacts-item {
+  margin-right: 15px;
 }
