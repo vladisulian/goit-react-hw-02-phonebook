@@ -42,8 +42,10 @@ export class App extends Component {
       return;
     }
     this.setState(prevState => {
+      const newContactsList = [...prevState.contacts, dataContact].flat(Infinity);
+
       return {
-        contacts: prevState.contacts.concat(dataContact),
+        contacts: newContactsList,
       };
     });
   };
