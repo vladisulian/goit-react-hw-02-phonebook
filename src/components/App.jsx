@@ -35,13 +35,11 @@ export class App extends Component {
       );
     });
 
-    for (const contact of this.state.contacts) {
-      if (isExist) {
-        alert(
-          `Name '${dataContact[0].name}' or number '${dataContact[0].number}' is already in contacts!`
-        );
-        return;
-      }
+    if (isExist) {
+      alert(
+        `Name '${dataContact[0].name}' or number '${dataContact[0].number}' is already in contacts!`
+      );
+      return;
     }
     this.setState(prevState => {
       return {
