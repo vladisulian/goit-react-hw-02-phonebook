@@ -35,7 +35,7 @@ export class App extends Component {
 
         if (name.includes(data.name) || number.includes(data.number)) {
           alert(
-            `${dataContact[0].name} or ${dataContact[0].number} is already in contacts!`
+            `Name '${dataContact[0].name}' or number '${dataContact[0].number}' is already in contacts!`
           );
           return;
         }
