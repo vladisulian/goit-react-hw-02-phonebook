@@ -27,7 +27,18 @@ export class App extends Component {
     const dataContact = [
       { id: nanoid(), name: data.name, number: data.number },
     ];
+    console.log(data);
+
     this.setState(prevState => {
+      for (const contact of prevState.contacts) {
+        const { name, number } = contact;
+
+        if (name.includes(data.name) || number.includes(data.number)) {
+          alert(`${dataContact[0].name} is already in contacts!`);
+          return;
+        }
+      }
+
       return {
         contacts: prevState.contacts.concat(dataContact),
       };
