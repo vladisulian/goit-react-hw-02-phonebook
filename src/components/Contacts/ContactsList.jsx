@@ -1,11 +1,7 @@
 import './ContactsList.css';
+import PropTypes from 'prop-types';
 
 export const ContactsList = ({ contacts, onDeleteContact }) => {
-  const sendIdToDelete = e => {
-    console.log(e.target.id);
-    this.props.SendId(e.target.id);
-  };
-
   return (
     <div className="Contacts-list-container">
       <h1>Contacts</h1>
@@ -32,4 +28,9 @@ export const ContactsList = ({ contacts, onDeleteContact }) => {
       </ul>
     </div>
   );
+};
+
+ContactsList.propTypes = {
+  contacts: PropTypes.array,
+  onDeleteContact: PropTypes.func,
 };

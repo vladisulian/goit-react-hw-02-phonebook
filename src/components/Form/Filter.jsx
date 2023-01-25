@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 export const FilterBar = ({ handleChange }) => {
   return (
     <>
@@ -5,4 +6,8 @@ export const FilterBar = ({ handleChange }) => {
       <input type="text" name="filter" onChange={handleChange} />
     </>
   );
+};
+
+FilterBar.propTypes = {
+  handleChange: PropTypes.func,
 };

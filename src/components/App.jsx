@@ -46,6 +46,7 @@ export class App extends Component {
   };
 
   deleteContact = contactId => {
+    // ? Instead creating new array from contacts - we just filter
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Form.css';
 
 export class Form extends Component {
@@ -65,3 +66,9 @@ export class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+  onSubmit: PropTypes.func,
+};
