@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import React, { Component } from 'react';
 import { ContactsList } from './Contacts/ContactsList';
-import { FilterBar } from './Form/Filter';
+import { FilterBar } from './Filter/Filter';
 import { Form } from './Form/Form';
 
 export class App extends Component {
@@ -27,20 +27,23 @@ export class App extends Component {
     const dataContact = [
       { id: nanoid(), name: data.name, number: data.number },
     ];
-    console.log(data);
 
-    this.setState(prevState => {
-      for (const contact of prevState.contacts) {
-        const { name, number } = contact;
+    const isExist = this.state.contacts.some(contact => {
+      return (
+        contact.name.toLowerCase() === data.name.toLowerCase() ||
+        contact.number.toLowerCase() === data.number.toLowerCase()
+      );
+    });
 
-        if (name.includes(data.name) || number.includes(data.number)) {
-          alert(
-            `Name '${dataContact[0].name}' or number '${dataContact[0].number}' is already in contacts!`
-          );
-          return;
-        }
+    for (const contact of this.state.contacts) {
+      if (isExist) {
+        alert(
+          `Name '${dataContact[0].name}' or number '${dataContact[0].number}' is already in contacts!`
+        );
+        return;
       }
-
+    }
+    this.setState(prevState => {
       return {
         contacts: prevState.contacts.concat(dataContact),
       };
